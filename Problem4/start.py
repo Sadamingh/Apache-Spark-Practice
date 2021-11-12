@@ -3,7 +3,7 @@ from pyspark import SparkContext
 
 def start_service():
     global sc
-    sc = SparkContext(appName="Problem2").getOrCreate()
+    sc = SparkContext(appName="Problem4").getOrCreate()
 
 
 def end_service():
