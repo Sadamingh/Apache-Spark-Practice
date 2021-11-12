@@ -5,7 +5,7 @@ filename = "start.py"
 
 
 def test_q1():
-    start_serive()
+    start_service()
     assert Q1() == ['3,91427'], "Q1 returns wrong result."
 
 
@@ -34,4 +34,4 @@ def test_sanity():
 
 
 def test_ending():
-    end_serive()
+    end_service()

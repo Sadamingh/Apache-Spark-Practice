@@ -1,12 +1,12 @@
 from pyspark import SparkContext
 
 
-def start_serive():
+def start_service():
     global sc
     sc = SparkContext(appName="Problem1").getOrCreate()
 
 
-def end_serive():
+def end_service():
     sc.stop()
 
 
