@@ -33,15 +33,3 @@ def Q3():
     rdd_split_nums = rdd.map(lambda x: [int(value) for value in x.split(",")])
     rdd_max = rdd_split_nums.map(lambda x: max(x))
     return round(rdd_max.mean(), 2)
-
-
-def main():
-
-    start_service()
-    Q1()
-    print(Q3())
-    end_service()
-
-
-if __name__ == '__main__':
-    main()
