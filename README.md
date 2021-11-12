@@ -35,7 +35,7 @@ $ pytest -v start_test.py
 
 A successful result should be something like,
 
-![passimage](/Users/apple/MSDS-Classes/msds694/Apache-Spark-Practice/image/passimage.png)
+![passimage](./image/passimage.png)
 
 For the solutions, you can refer to the `solution.py` file in each problem folder.
 
