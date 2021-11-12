@@ -53,7 +53,10 @@ def Q3():
 def Q4():
     rdd_split = rdd.map(lambda x: x.split(","))
     rdd_data = rdd_split.filter(lambda x: x[0] != "DayOrder")
-    rdd_blocks = rdd_data.map(lambda x: int(x[6]))
+    rdd_blocks = rdd_data.filter(
+        lambda x: x[1] == "Monday").map(
+        lambda x: int(
+            x[6]))
     return rdd_blocks.reduce(lambda x, y: x + y)
 
 

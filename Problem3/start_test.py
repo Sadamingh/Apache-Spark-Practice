@@ -22,7 +22,7 @@ def test_q3():
 
 
 def test_q4():
-    assert Q4() == 3483653338, "Q4 returns wrong result."
+    assert Q4() == 650613184, "Q4 returns wrong result."
 
 
 def test_q5():
