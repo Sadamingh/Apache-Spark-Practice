@@ -44,14 +44,3 @@ def Q4():
     rdd_code = rdd.map(lambda x: int(x.split(",")[1]))
     rdd_even = rdd_code.filter(lambda x: x % 2 == 0)
     return rdd_even.count()
-
-
-def main():
-    start_serive()
-    Q1()
-    print(Q4())
-    end_serive()
-
-
-if __name__ == '__main__':
-    main()
