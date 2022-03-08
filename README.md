@@ -163,10 +163,46 @@ Empty
 df = ss.read.json("./Business.json", business_schema)
 ```
 
+* What's the data types in schema for the spark dataframe `df` after the following read?
+
+```
+df = ss.read.json("./Business.json")
+```
+
+Answer:
+
+```
+inferred data types
+```
+
 * How to read a csv file with name `./Business.csv` and schema `business_schema` to spark dataframe `df`?
 
 ```
 df = ss.read.csv("./Business.csv", business_schema)
+```
+
+* What's the data types in schema for the spark dataframe `df` after the following read?
+
+```
+df = ss.read.csv("./Business.json")
+```
+
+Answer:
+
+```
+strings
+```
+
+* What's the data types in schema for the spark dataframe `df` after the following read?
+
+```
+df = ss.read.csv("./Business.json", inferSchema=True)
+```
+
+Answer:
+
+```
+inferred data types
 ```
 
 * How to read parquet files from directory `./spark-warehouse/Business` and schema  `business_schema` to spark dataframe `df`?
@@ -377,13 +413,13 @@ A Pipeline chains multiple Transformers and Estimators together to specify an ML
 * Give three examples of transformers.
 
 ```
-StringIndexer, OneHotEncoder, VectorAssembler
+VectorAssembler, or the estimator after fitting the data
 ```
 
 * Give four examples of estimators.
 
 ```
-KMeans, RandomForestClassifier, DecisionTreeClassifier, LogisticRegression
+StringIndexer, OneHotEncoder, KMeans, RandomForestClassifier, DecisionTreeClassifier, LogisticRegression
 ```
 
 * Give two examples of evaluators.
@@ -507,6 +543,45 @@ hc = H2OContext.getOrCreate()
 h2o.import_file(file_path)
 ```
 
+* What will be the column names for the output of the following code?
+
+```
+h2odf = h2o.import_file(file_path)
+h2odf.show()
+```
+
+Answer:
+
+```
+C1, C2, ...
+```
+
+* What will be the column names for the output of the following code?
+
+```
+h2odf = h2o.import_file(file_path)
+h2odf.set_names(col_names)
+```
+
+Answer:
+
+```
+col_names
+```
+
+* What will be the column names for the output of the following code?
+
+```
+h2odf = h2o.import_file(file_path)
+h2odf = h2odf.set_names(col_names)
+```
+
+Answer:
+
+```
+col_names
+```
+
 * How can we convert a spark dataframe `df` to a h2o dataframe?
 
 ```
@@ -555,7 +630,11 @@ model.leaderboard.get_best_model()
 model.explain(val)
 ```
 
+* How to get the predictions of a H2O model `model` on the validation set `val`?
 
+```
+model.predict(val)
+```
 
 
 
